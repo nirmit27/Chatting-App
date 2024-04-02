@@ -9,7 +9,7 @@
 
 <body class="h-screen bg-slate-200">
     <div class="mx-auto max-w-md overflow-hidden rounded bg-slate-100 p-4 shadow-md">
-        <div class="mb-4 flex items-start justify-start">
+        <!-- <div class="mb-4 flex items-start justify-start">
             <div class="flex-shrink-0">
                 <img class="h-8 w-8 rounded-full" src="bot-avatar.png" alt="Bot Avatar" />
             </div>
@@ -30,19 +30,31 @@
             <div class="flex-shrink-0">
                 <img class="h-8 w-8 rounded-full" src="user-avatar.png" alt="User Avatar" />
             </div>
-        </div>
+        </div> -->
     </div>
 
-    <div class="fixed bottom-0 flex max-h-24 w-screen justify-center bg-slate-300 p-6">
+    <form id="form" action="" method="post" class="fixed bottom-0 flex max-h-24 w-screen justify-center bg-slate-300 p-6">
         <input type="text" name="chat-input" id="chat-input" placeholder="Enter your prompt"
             class="w-200 rounded border border-slate-400 p-2 focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-1/5" />
         <input type="submit" value="Send" class="ml-2 w-20 rounded-md bg-blue-600 p-2 text-white hover:cursor-pointer hover:bg-blue-800 focus:bg-blue-800 focus:outline-none
             transition ease-in-out delay-50 active:bg-blue-600" />
-    </div>
+    </form>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
+
+        const form = document.getElementById("form");
+        const input = document.getElementById("chat-input");
+
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            if(input.value){
+                socket.emit("chat message", input.value);
+                input.value = '';
+            }
+        });
+
     </script>
 </body>
 

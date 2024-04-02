@@ -1,4 +1,4 @@
-/* Socket.IO Chatting App */ 
+/*  Socket.IO Chatting App  */ 
 
 const path = require("path");
 const express = require("express");
@@ -24,6 +24,12 @@ io.on("connection", (socket) => {
   console.log("A user connected.");
   socket.on("disconnect", () => {
     console.log("A user disconnected.");
+  });
+});
+
+io.on("connection", (socket)=>{
+  socket.on("chat message", (msg)=>{
+    console.log("\nMessage : " + msg);
   });
 });
 
