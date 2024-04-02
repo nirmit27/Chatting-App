@@ -1,2 +1,2 @@
-# Client-Server Architecture
-Learning the Client-Server model in **JavaScript**.
+# _Socket.IO Chatting App_
+Learning the Client-Server model in **JavaScript** using [Socket.IO](https://socket.io/).
