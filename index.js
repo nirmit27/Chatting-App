@@ -1,27 +1,32 @@
-// Socket.IO Intro
+/* Socket.IO Chatting App */ 
 
-const path= require('path')
-const express = require('express')
-const { createServer } = require('node:http')
-const { Server } = require('socket.io')
+const path = require("path");
+const express = require("express");
+const { createServer } = require("node:http");
+const { Server } = require("socket.io");
 
-const port = 3000
+const port = 3000;
+const app = express();
+const server = createServer(app);
+const io = new Server(server);
 
-const app = express()
-const server = createServer(app)
-const io = new Server(server)
+// For serving static HTML and CSS files
+app.use(express.static(path.join(__dirname, "src")));
 
-app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, "./index.html"))
-})
+// For serving other static files
+app.use(express.static(path.join(__dirname, "public")));
 
-io.on('connection', (socket)=>{
-    console.log("a user connected")
-    socket.on('disconnect', ()=>{
-        console.log("a user disconnected")
-    })
-})
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
 
-server.listen(port, ()=>{
-    console.log(`Server listening on port ${port}`)
-})
+io.on("connection", (socket) => {
+  console.log("A user connected.");
+  socket.on("disconnect", () => {
+    console.log("A user disconnected.");
+  });
+});
+
+server.listen(port, () => {
+  console.log(`\nServer is listening on port ${port}\n`);
+});
