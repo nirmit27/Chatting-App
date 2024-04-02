@@ -8,6 +8,9 @@
 </head>
 
 <body class="h-screen bg-slate-200">
+
+    <div id="root"></div>
+
     <div class="mx-auto max-w-md overflow-hidden rounded bg-slate-100 p-4 shadow-md" id="messages">
         <!-- <div class="mb-4 flex items-start justify-start">
             <div class="flex-shrink-0">
@@ -46,6 +49,7 @@
 
         const form = document.getElementById("form");
         const input = document.getElementById("chat-input");
+        const messages = document.getElementById("messages");
 
         form.addEventListener("submit", (e)=>{
             e.preventDefault();
