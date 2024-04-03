@@ -4,12 +4,16 @@ import ChatInput from './components/ChatInput'
 
 export default function App(){
 
-    const [ message, setMessage ] = useState("")
+    const [ messages, setMessages ] = useState([])
+
+    const handleNewMessages = (message) => {
+        setMessages([...messages, message])
+    }
 
     return (
         <div>
-            <ChatContainer message={message}/>
-            <ChatInput setMessage={setMessage}/>
+            <ChatContainer messages={messages}/>
+            <ChatInput onNewMessage={handleNewMessages}/>
         </div>
     )
 }

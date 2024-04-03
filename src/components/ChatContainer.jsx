@@ -1,11 +1,15 @@
 import Message from './Message'
 
-export default function ChatContainer({ message }){
+export default function ChatContainer({ messages }){
     return (
-        <div class="mt-4 mx-auto max-w-lg overflow-hidden rounded bg-slate-100 p-4 shadow-md" id="messages">
+        <div class="mt-4 py-3 px-4 mx-auto w-4/5 md:w-2/5 overflow-hidden rounded bg-slate-100 shadow-md" id="messages">
             {
-                message ? (<Message message={message} />) : (<Message message="" />)
-            } 
+                (messages.length) ? (
+                    messages.map((message, index) => (
+                        <Message key={index} message={message} />
+                    ))
+                ) : (<Message message="" />)
+            }
         </div>
     )
 }

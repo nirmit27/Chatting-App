@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react"
 
-export default function ChatInput({ setMessage }){
+export default function ChatInput({ onNewMessage }){
 
     const [ inputValue, setInputValue ] = useState("")
 
     const handleChange = (e) => {
         setInputValue(e.target.value)
-    };
+    }
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        setMessage(inputValue)
-        setInputValue("")
+        if(inputValue.trim() !== ""){
+            onNewMessage(inputValue)
+            setInputValue("")
+        }
     }
 
     useEffect(() => {

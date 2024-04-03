@@ -1,7 +1,7 @@
 export default function Message({ message }){
     return (
         <div class="flex items-end justify-end">
-            <div class="ml-11 mr-3">
+            <div class="ml-11 mr-3 my-1">
                 {
                     message ? (
                     <div class="rounded-lg bg-blue-500 px-3 py-2 text-white">
