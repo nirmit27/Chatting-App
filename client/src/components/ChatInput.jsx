@@ -32,7 +32,7 @@ export default function ChatInput() {
         placeholder="Type your message..."
         value={inputValue}
         onChange={handleChange}
-        class="w-full rounded border border-slate-400 p-2 
+        class="w-full bg-slate-100 rounded border border-slate-400 p-2 
         focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6"
       />
 
