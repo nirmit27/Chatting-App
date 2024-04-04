@@ -3,7 +3,7 @@ const { createServer } = require("node:http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
-const serverPort = 3000;
+const serverPort = process.env.PORT || 3000;
 const clientPort = 5173;
 
 const app = express();
