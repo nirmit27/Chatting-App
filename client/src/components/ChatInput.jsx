@@ -22,6 +22,7 @@ export default function ChatInput() {
       id="form"
       action=""
       method="post"
+      onSubmit={handleSubmit}
       class="fixed bottom-0 flex max-h-24 w-screen justify-center bg-slate-300 p-6"
     >
       <input
@@ -31,7 +32,6 @@ export default function ChatInput() {
         placeholder="Enter your prompt"
         value={inputValue}
         onChange={handleChange}
-        onSubmit={handleSubmit}
         class="w-300 rounded border border-slate-400 p-2 
         focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6"
       />
