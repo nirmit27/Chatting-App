@@ -12,7 +12,7 @@ export default function ChatInput() {
     e.preventDefault();
 
     if (inputValue.trim() !== "") {
-      socket.emit("chat message", inputValue);
+      socket.emit("chat_message", inputValue);
       setInputValue("");
     }
   };
@@ -32,8 +32,8 @@ export default function ChatInput() {
         value={inputValue}
         onChange={handleChange}
         onSubmit={handleSubmit}
-        class="w-300 rounded border border-slate-400 p-2 focus:shadow-sm focus:shadow-blue-800
-        focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6"
+        class="w-300 rounded border border-slate-400 p-2 
+        focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6"
       />
 
       <input

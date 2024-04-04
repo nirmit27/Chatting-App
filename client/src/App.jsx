@@ -7,14 +7,14 @@ export default function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    socket.on("chat message", (msg) => {
+    socket.on("recieve_message", (msg) => {
       setMessages((prevMessages) => [...prevMessages, msg]);
     });
 
     return () => {
-      socket.off("chat message");
+      socket.off("recieve_message");
     };
-  }, []);
+  }, [socket]);
 
   return (
     <div>
