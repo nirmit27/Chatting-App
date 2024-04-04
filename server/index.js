@@ -26,8 +26,7 @@ io.on("connection", (socket) => {
 
 io.on("connection", (socket) => {
   socket.on("chat_message", (msg) => {
-    console.log("\nMessage : " + msg);
-    socket.broadcast.emit("recieve_message");
+    socket.broadcast.emit("recieve_message", msg);
   });
 });
 
