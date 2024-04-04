@@ -20,7 +20,7 @@ app.use(cors());
 io.on("connection", (socket) => {
   console.log("\nA user connected");
   socket.on("disconnect", () => {
-    console.log("A user disconnected");
+    console.log("\nA user disconnected");
   });
 });
 
