@@ -10,7 +10,7 @@ export default function Message({ message, altColor }) {
           <p class="break-words text-sm">{message}</p>
         </div>
       ) : (
-        <div class="overflow-hidden rounded-lg bg-transparent px-3 py-2 text-black">
+        <div class="overflow-hidden rounded-lg bg-slate-300 px-4 py-4 text-slate-500">
           <p class="break-words text-sm">Say something...</p>
         </div>
       )}
