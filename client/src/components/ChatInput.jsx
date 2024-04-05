@@ -23,7 +23,7 @@ export default function ChatInput() {
       action=""
       method="post"
       onSubmit={handleSubmit}
-      class="fixed bottom-0 flex max-h-24 justify-center w-screen bg-slate-300 py-6 px-2"
+      class="flex max-h-24 w-full flex-shrink-0 justify-center bg-slate-300 px-2 py-6"
     >
       <input
         type="text"
@@ -32,15 +32,13 @@ export default function ChatInput() {
         placeholder="Type your message..."
         value={inputValue}
         onChange={handleChange}
-        class="w-full bg-slate-100 rounded border border-slate-400 p-2 
-        focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6"
+        class="w-full rounded border border-slate-400 bg-slate-100 p-2 focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6" 
       />
 
       <input
         type="submit"
         value="Send"
-        class="ml-2 w-20 rounded-md bg-blue-600 p-2 text-white hover:cursor-pointer hover:bg-blue-800
-         focus:bg-blue-800 focus:outline-none transition ease-in-out delay-50 active:bg-blue-600"
+        class="ml-2 w-20 rounded-md bg-blue-600 p-2 text-white transition duration-75 ease-in-out hover:cursor-pointer hover:bg-blue-800 focus:bg-blue-800 focus:outline-none active:bg-blue-600"
       />
     </form>
   );

@@ -17,7 +17,7 @@ export default function App() {
   }, [socket]);
 
   return (
-    <div>
+    <div className="flex h-screen w-screen flex-col">
       <ChatContainer messages={messages} />
       <ChatInput />
     </div>

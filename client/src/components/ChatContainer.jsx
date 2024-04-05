@@ -3,7 +3,7 @@ import Message from "./Message";
 export default function ChatContainer({ messages }) {
   return (
     <div
-      class="py-3 px-2 mx-auto w-full md:w-3/5 md:rounded bg-slate-100 shadow-md"
+      class="flex-1 overflow-y-auto rounded bg-slate-200 px-6 py-4 shadow-md"
       id="messages"
     >
       {messages.length ? (
