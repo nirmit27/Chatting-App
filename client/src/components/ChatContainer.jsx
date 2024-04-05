@@ -3,8 +3,8 @@ import Message from "./Message";
 export default function ChatContainer({ messages }) {
   return (
     <div
-      class="flex-1 overflow-y-auto rounded bg-slate-200 px-6 py-4 shadow-md"
-      id="messages"
+      class="flex-1 overflow-y-auto rounded bg-slate-200 px-2 md:px-96 pt-4 shadow-md"
+      id="chat-container"
     >
       {messages.length ? (
         messages.map((message, index) => (

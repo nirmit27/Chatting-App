@@ -4,6 +4,11 @@ import { useState } from "react";
 export default function ChatInput() {
   const [inputValue, setInputValue] = useState("");
 
+  const scrollToBottom = () => {
+    const chatContainer = document.getElementById("chat-container");
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  };
+
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -13,6 +18,7 @@ export default function ChatInput() {
 
     if (inputValue.trim() !== "") {
       socket.emit("chat_message", inputValue);
+      scrollToBottom();
       setInputValue("");
     }
   };
@@ -32,7 +38,7 @@ export default function ChatInput() {
         placeholder="Type your message..."
         value={inputValue}
         onChange={handleChange}
-        class="w-full rounded border border-slate-400 bg-slate-100 p-2 focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6" 
+        class="w-full rounded border border-slate-400 bg-slate-100 p-2 focus:shadow-sm focus:shadow-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-400 md:w-2/6"
       />
 
       <input
