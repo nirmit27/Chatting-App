@@ -11,7 +11,7 @@ Learning the Client-Server model in **JavaScript** using [Socket.IO](https://soc
 
 ## Setup and Installation
 
-1. Clone the repository : `git clone https://github.com:nirmit27/Chatting-App.git`
+1. Clone the repository : `git clone https://github.com/nirmit27/Chatting-App.git`
    
 2. Open **two** terminals in your IDE, preferably **side by side** as shown in the next step.
    
